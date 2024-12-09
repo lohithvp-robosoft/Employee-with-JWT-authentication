@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 @SpringBootApplication
 public class EmployeeDetailsApplication {
-    public static ArrayList<Employee> employeeList = new ArrayList<>();
 
     public static void main(String[] args) {
 
