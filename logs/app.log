@@ -1,0 +1,112 @@
+2024-12-06 12:56:31 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Starting EmployeeDetailsApplication using Java 17.0.2 with PID 7688 (D:\Training\SpringBoot Training\Employee-Details using JPA\target\classes started by Lohith VP in D:\Training\SpringBoot Training\Employee-Details using JPA)
+2024-12-06 12:56:31 DEBUG com.example.Employee_Details.EmployeeDetailsApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-06 12:56:31 INFO  com.example.Employee_Details.EmployeeDetailsApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-06 12:56:33 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-06 12:56:33 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-06 12:56:34 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-06 12:56:34 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-06 12:56:34 INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-06 12:56:34 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-06 12:56:34 INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-06 12:56:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-06 12:56:35 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a06602f
+2024-12-06 12:56:35 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-06 12:56:35 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-06 12:56:36 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-06 12:56:37 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-06 12:56:38 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-06 12:56:38 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Started EmployeeDetailsApplication in 7.135 seconds (process running for 9.105)
+2024-12-06 12:56:44 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-06 12:56:49 INFO  com.example.Employee_Details.Services.UserServiceImplementation - User created successfully
+2024-12-06 13:01:14 INFO  com.example.Employee_Details.Services.UserServiceImplementation - User created successfully
+2024-12-06 13:03:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-06 13:03:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-06 13:03:29 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Starting EmployeeDetailsApplication using Java 17.0.2 with PID 16964 (D:\Training\SpringBoot Training\Employee-Details using JPA\target\classes started by Lohith VP in D:\Training\SpringBoot Training\Employee-Details using JPA)
+2024-12-06 13:03:29 DEBUG com.example.Employee_Details.EmployeeDetailsApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-06 13:03:29 INFO  com.example.Employee_Details.EmployeeDetailsApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-06 13:03:30 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-06 13:03:30 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-06 13:03:30 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-06 13:03:30 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-06 13:03:30 INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-06 13:03:30 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-06 13:03:30 INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-06 13:03:31 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-06 13:03:31 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ecdcfe3
+2024-12-06 13:03:31 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-06 13:03:31 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-06 13:03:32 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-06 13:03:32 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-06 13:03:33 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-06 13:03:33 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Started EmployeeDetailsApplication in 4.42 seconds (process running for 5.421)
+2024-12-06 13:03:37 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-06 13:03:37 INFO  com.example.Employee_Details.Services.UserServiceImplementation - User created successfully
+2024-12-06 13:07:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-06 13:07:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-06 13:07:22 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Starting EmployeeDetailsApplication using Java 17.0.2 with PID 2684 (D:\Training\SpringBoot Training\Employee-Details using JPA\target\classes started by Lohith VP in D:\Training\SpringBoot Training\Employee-Details using JPA)
+2024-12-06 13:07:22 DEBUG com.example.Employee_Details.EmployeeDetailsApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-06 13:07:22 INFO  com.example.Employee_Details.EmployeeDetailsApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-06 13:07:23 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-06 13:07:23 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-06 13:07:23 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-06 13:07:23 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-06 13:07:24 INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-06 13:07:24 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-06 13:07:24 INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-06 13:07:24 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-06 13:07:24 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61d011e
+2024-12-06 13:07:24 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-06 13:07:24 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-06 13:07:25 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-06 13:07:26 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-06 13:07:26 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-06 13:07:26 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Started EmployeeDetailsApplication in 4.607 seconds (process running for 5.578)
+2024-12-06 13:07:27 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-06 13:07:27 INFO  com.example.Employee_Details.Services.UserServiceImplementation - User created successfully
+2024-12-06 13:09:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-06 13:09:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-06 13:09:32 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Starting EmployeeDetailsApplication using Java 17.0.2 with PID 36392 (D:\Training\SpringBoot Training\Employee-Details using JPA\target\classes started by Lohith VP in D:\Training\SpringBoot Training\Employee-Details using JPA)
+2024-12-06 13:09:32 DEBUG com.example.Employee_Details.EmployeeDetailsApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-06 13:09:32 INFO  com.example.Employee_Details.EmployeeDetailsApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-06 13:09:34 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-06 13:09:34 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-06 13:09:34 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-06 13:09:34 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-06 13:09:34 INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-06 13:09:34 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-06 13:09:34 INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-06 13:09:35 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-06 13:09:35 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61d011e
+2024-12-06 13:09:35 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-06 13:09:35 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-06 13:09:36 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-06 13:09:36 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-06 13:09:37 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-06 13:09:37 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Started EmployeeDetailsApplication in 4.472 seconds (process running for 5.404)
+2024-12-06 13:09:46 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-06 13:09:46 INFO  com.example.Employee_Details.Services.UserServiceImplementation - User created successfully
+2024-12-06 13:09:46 ERROR com.example.Employee_Details.Services.UserServiceImplementation - Its error
+2024-12-06 13:09:46 DEBUG com.example.Employee_Details.Services.UserServiceImplementation - Its debug
+2024-12-06 16:10:35 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h59m196ms666µs200ns).
+2024-12-06 16:22:06 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-06 16:22:06 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-06 16:22:09 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Starting EmployeeDetailsApplication using Java 17.0.2 with PID 14736 (D:\Training\SpringBoot Training\Employee-Details using JPA\target\classes started by Lohith VP in D:\Training\SpringBoot Training\Employee-Details using JPA)
+2024-12-06 16:22:09 DEBUG com.example.Employee_Details.EmployeeDetailsApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-06 16:22:09 INFO  com.example.Employee_Details.EmployeeDetailsApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-06 16:22:11 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-06 16:22:11 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-06 16:22:11 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-06 16:22:11 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-06 16:22:11 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-06 16:22:12 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36511772
+2024-12-06 16:22:12 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-06 16:22:12 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-06 16:22:13 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-06 16:22:13 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-06 16:22:13 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Started EmployeeDetailsApplication in 4.403 seconds (process running for 5.457)
+2024-12-06 16:22:29 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-06 16:22:29 INFO  com.example.Employee_Details.Services.UserServiceImplementation - User created successfully
+2024-12-06 16:22:29 ERROR com.example.Employee_Details.Services.UserServiceImplementation - Its error
+2024-12-06 16:22:29 DEBUG com.example.Employee_Details.Services.UserServiceImplementation - Its debug
+2024-12-06 16:27:29 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-06 16:27:29 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
