@@ -37,7 +37,7 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public ResponseEntity<UserResponseDTO> registerUser(UserRequest userRequest) {
-        // Check if the user already exists
+
 //        if (userRepository.findByEmail(userRequest.getEmail()).isPresent()) {
 //            return new ResponseEntity<>(new UserResponseDTO(-1, 409, "Email already Present", null), HttpStatusCode.valueOf(409));
 //        }

@@ -47,6 +47,10 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
+                logger.info("Its falied token "+authentication);
+                logger.debug("Authenticated User: {}, Roles: {}", username, userDetails.getAuthorities());
+
+
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         } catch (Exception e) {
