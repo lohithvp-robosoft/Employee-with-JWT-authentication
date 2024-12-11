@@ -1,8 +1,9 @@
 package com.example.Employee_Details.Services;
 
-import com.example.Employee_Details.DTO.UserRequest;
-import com.example.Employee_Details.DTO.UserResponse;
-import com.example.Employee_Details.DTO.UserResponseDTO;
+import com.example.Employee_Details.dto.LoginResponse;
+import com.example.Employee_Details.dto.RegisterResponse;
+import com.example.Employee_Details.dto.UserRequest;
+import com.example.Employee_Details.dto.UserResponseDTO;
 import com.example.Employee_Details.jwt.JwtUtils;
 import com.example.Employee_Details.model.User;
 import com.example.Employee_Details.repository.UserRepository;
@@ -16,7 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImplementation implements UserService {
@@ -36,11 +37,11 @@ public class UserServiceImplementation implements UserService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public ResponseEntity<UserResponseDTO> registerUser(UserRequest userRequest) {
+    public ResponseEntity<UserResponseDTO<RegisterResponse>> registerUser(UserRequest userRequest) {
 
-//        if (userRepository.findByEmail(userRequest.getEmail()).isPresent()) {
-//            return new ResponseEntity<>(new UserResponseDTO(-1, 409, "Email already Present", null), HttpStatusCode.valueOf(409));
-//        }
+        if (userRepository.findByEmail(userRequest.getEmail()).isPresent()) {
+            return new ResponseEntity<>(new UserResponseDTO<>(-1, 409, "Email already Present", null), HttpStatusCode.valueOf(409));
+        }
 
         User newUser = new User();
         newUser.setEmail(userRequest.getEmail());
@@ -50,19 +51,34 @@ public class UserServiceImplementation implements UserService {
         logger.info(userCreatedMessage);
         userRepository.save(newUser);
 
+        RegisterResponse response = new RegisterResponse(newUser.getEmail(), newUser.getRole());
+
+        return new ResponseEntity<>(new UserResponseDTO<RegisterResponse>(0, 200, userCreatedMessage, response), HttpStatusCode.valueOf(200));
+    }
+
+    @Override
+    public ResponseEntity<UserResponseDTO<LoginResponse>> loginUser(UserRequest userRequest) {
+        Optional<User> userOptional = userRepository.findByEmail(userRequest.getEmail());
+        if (userOptional.isEmpty()) {
+            return new ResponseEntity<>(new UserResponseDTO<>(-1, 404, "User not found", null), HttpStatusCode.valueOf(404));
+        }
+
+        User user = userOptional.get();
+
+        if (!passwordEncoder.matches(userRequest.getPassword(), user.getPassword())) {
+            return new ResponseEntity<>(new UserResponseDTO<>(-1, 401, "Invalid credentials", null), HttpStatusCode.valueOf(401));
+        }
+
         UserDetails userDetails = org.springframework.security.core.userdetails.User
                 .builder()
-                .username(newUser.getEmail())
-                .password(newUser.getPassword())
-                .roles(newUser.getRole().name())
+                .username(user.getEmail())
+                .password(user.getPassword())
+                .roles(user.getRole().name())
                 .build();
 
         String jwtToken = jwtUtils.generateTokenFromUsername(userDetails);
+        LoginResponse loginResponse = new LoginResponse(user.getEmail(), user.getRole(),jwtToken);
 
-        UserResponse response = new UserResponse(newUser.getEmail(), newUser.getRole(), jwtToken);
-
-        return new ResponseEntity<>(new UserResponseDTO(0, 200, userCreatedMessage, response), HttpStatusCode.valueOf(200));
+        return new ResponseEntity<>(new UserResponseDTO<LoginResponse>(0, 200, userCreatedMessage, loginResponse), HttpStatusCode.valueOf(200));
     }
-
-
 }

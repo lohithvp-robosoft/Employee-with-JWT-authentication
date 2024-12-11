@@ -1,10 +1,10 @@
 package com.example.Employee_Details.controller;
 
-import com.example.Employee_Details.DTO.UserRequest;
-import com.example.Employee_Details.DTO.UserResponseDTO;
+import com.example.Employee_Details.dto.LoginResponse;
+import com.example.Employee_Details.dto.RegisterResponse;
+import com.example.Employee_Details.dto.UserRequest;
+import com.example.Employee_Details.dto.UserResponseDTO;
 import com.example.Employee_Details.Services.UserService;
-import com.example.Employee_Details.jwt.JwtUtils;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,8 +25,13 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/v1/register")
-    public ResponseEntity<UserResponseDTO> registerUser(@RequestBody UserRequest userRequest) {
+    public ResponseEntity<UserResponseDTO<RegisterResponse>> registerUser(@RequestBody UserRequest userRequest) {
         return userService.registerUser(userRequest);
+    }
+
+    @PostMapping("/v1/login")
+    public ResponseEntity<UserResponseDTO<LoginResponse>> loginUser(@RequestBody UserRequest userRequest) {
+        return userService.loginUser(userRequest);
     }
 
     @PreAuthorize("hasRole('USER')")

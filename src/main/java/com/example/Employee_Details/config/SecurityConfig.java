@@ -43,8 +43,13 @@ public class SecurityConfig {
         http.authorizeHttpRequests(authorizeRequests ->
                 authorizeRequests
                         .requestMatchers("/api/v1/register").permitAll()
-                        .requestMatchers("/admin").hasRole("ADMIN")
-                        .anyRequest().authenticated()
+                        .requestMatchers("/api/v1/login").permitAll()
+                        .requestMatchers("/swagger-ui.html").permitAll()
+                        .requestMatchers("/swagger-ui/index.html").permitAll()
+                        .requestMatchers("/api/admin").hasRole("ADMIN")
+                        .requestMatchers("/api/user").hasRole("USER")
+                        .requestMatchers("/api/v1/delete-employee").hasRole("ADMIN")
+//                        .anyRequest().authenticated()
         );
 
         http.sessionManagement(session ->

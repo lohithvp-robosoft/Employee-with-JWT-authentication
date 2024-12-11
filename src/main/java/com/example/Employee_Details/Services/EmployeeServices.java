@@ -1,9 +1,9 @@
 package com.example.Employee_Details.Services;
 
-import com.example.Employee_Details.DTO.EmployeeRequestDTO;
-import com.example.Employee_Details.DTO.EmployeeResponseDTO;
-import com.example.Employee_Details.Exception.EmptyEmployeeListException;
-import com.example.Employee_Details.Exception.NotFoundException;
+import com.example.Employee_Details.dto.EmployeeRequestDTO;
+import com.example.Employee_Details.dto.EmployeeResponseDTO;
+import com.example.Employee_Details.exception.EmptyEmployeeListException;
+import com.example.Employee_Details.exception.NotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 

@@ -1,11 +1,10 @@
-package com.example.Employee_Details.Exception;
+package com.example.Employee_Details.exception;
 
-import com.example.Employee_Details.DTO.EmployeeResponseDTO;
-import com.example.Employee_Details.DTO.UserResponseDTO;
+import com.example.Employee_Details.dto.EmployeeResponseDTO;
+import com.example.Employee_Details.dto.UserResponseDTO;
 import com.example.Employee_Details.Utils.ResponseUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 @ControllerAdvice

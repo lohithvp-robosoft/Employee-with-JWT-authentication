@@ -1,4 +1,4 @@
-package com.example.Employee_Details.Exception;
+package com.example.Employee_Details.exception;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,6 @@
 package com.example.Employee_Details.model;
 
-import com.example.Employee_Details.DTO.EmployeeRequestDTO;
+import com.example.Employee_Details.dto.EmployeeRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 

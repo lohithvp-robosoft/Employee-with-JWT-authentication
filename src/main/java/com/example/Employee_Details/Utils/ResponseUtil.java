@@ -1,7 +1,7 @@
 package com.example.Employee_Details.Utils;
 
-import com.example.Employee_Details.DTO.EmployeeResponseDTO;
-import com.example.Employee_Details.DTO.EmployeeResponse;
+import com.example.Employee_Details.dto.EmployeeResponseDTO;
+import com.example.Employee_Details.dto.EmployeeResponse;
 import com.example.Employee_Details.model.Employee;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
