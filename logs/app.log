@@ -27775,3 +27775,37 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'sp
 2024-12-11 22:55:21 INFO  com.example.Employee_Details.Services.UserServiceImplementation - User created successfully
 2024-12-11 22:55:21 DEBUG org.hibernate.SQL - insert into user (email,password,role) values (?,?,?)
 2024-12-11 22:55:28 INFO  com.example.Employee_Details.Utils.MailUtil - Registration email sent to lohith.19ec026@sode-edu.in
+2024-12-11 23:22:35 DEBUG org.hibernate.SQL - drop table if exists employee
+2024-12-11 23:22:35 DEBUG org.hibernate.SQL - drop table if exists user
+2024-12-11 23:22:35 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-11 23:22:35 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-11 23:31:29 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Starting EmployeeDetailsApplication using Java 19.0.1 with PID 15644 (D:\Programming\SpringBoot\Robosoft-Task\Employee-with-JWT-authentication\target\classes started by asus in D:\Programming\SpringBoot\Robosoft-Task\Employee-with-JWT-authentication)
+2024-12-11 23:31:29 DEBUG com.example.Employee_Details.EmployeeDetailsApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-11 23:31:29 INFO  com.example.Employee_Details.EmployeeDetailsApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-11 23:31:31 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-11 23:31:31 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-11 23:31:31 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-11 23:31:32 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-11 23:31:32 INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-11 23:31:32 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-11 23:31:32 INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-11 23:31:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-11 23:31:33 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33e4068
+2024-12-11 23:31:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-11 23:31:33 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-11 23:31:34 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-11 23:31:34 DEBUG org.hibernate.SQL - drop table if exists employee
+2024-12-11 23:31:34 DEBUG org.hibernate.SQL - drop table if exists user
+2024-12-11 23:31:34 DEBUG org.hibernate.SQL - create table employee (id bigint not null auto_increment, department varchar(255), designation varchar(255), name varchar(255), primary key (id)) engine=InnoDB
+2024-12-11 23:31:34 DEBUG org.hibernate.SQL - create table user (id bigint not null auto_increment, email varchar(255) not null, password varchar(255), role enum ('ADMIN','USER'), primary key (id)) engine=InnoDB
+2024-12-11 23:31:34 DEBUG org.hibernate.SQL - alter table user add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)
+2024-12-11 23:31:35 DEBUG com.example.Employee_Details.jwt.AuthTokenFilter - Filter 'authTokenFilter' configured for use
+2024-12-11 23:31:35 DEBUG com.example.Employee_Details.jwt.AuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+2024-12-11 23:31:35 WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-11 23:31:35 INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-12-11 23:31:35 DEBUG org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, AuthTokenFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-11 23:31:36 INFO  com.example.Employee_Details.EmployeeDetailsApplication - Started EmployeeDetailsApplication in 7.65 seconds (process running for 9.137)
+2024-12-11 23:31:36 DEBUG org.hibernate.SQL - drop table if exists employee
+2024-12-11 23:31:36 DEBUG org.hibernate.SQL - drop table if exists user
+2024-12-11 23:31:36 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-11 23:31:36 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
