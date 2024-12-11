@@ -1,5 +1,6 @@
 package com.example.Employee_Details.Services;
 
+import com.example.Employee_Details.Utils.MailUtil;
 import com.example.Employee_Details.dto.LoginResponse;
 import com.example.Employee_Details.dto.RegisterResponse;
 import com.example.Employee_Details.dto.UserRequest;
@@ -28,6 +29,9 @@ public class UserServiceImplementation implements UserService {
     private static final Logger logger = LogManager.getLogger(UserServiceImplementation.class);
 
     @Autowired
+    private MailUtil mailUtil;
+
+    @Autowired
     private JwtUtils jwtUtils;
 
     @Autowired
@@ -50,6 +54,9 @@ public class UserServiceImplementation implements UserService {
 
         logger.info(userCreatedMessage);
         userRepository.save(newUser);
+
+        mailUtil.sendRegistrationEmail(newUser);
+
 
         RegisterResponse response = new RegisterResponse(newUser.getEmail(), newUser.getRole());
 

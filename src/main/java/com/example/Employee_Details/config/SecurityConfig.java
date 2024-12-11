@@ -49,7 +49,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/admin").hasRole("ADMIN")
                         .requestMatchers("/api/user").hasRole("USER")
                         .requestMatchers("/api/v1/delete-employee").hasRole("ADMIN")
-//                        .anyRequest().authenticated()
+                        .anyRequest().authenticated()
         );
 
         http.sessionManagement(session ->

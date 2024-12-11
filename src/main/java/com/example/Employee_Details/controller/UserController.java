@@ -41,14 +41,10 @@ public class UserController {
     }
 
         @PreAuthorize("hasRole('ADMIN')")
-//    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin")
     public String adminEndpoint() {
 
-        //
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        //
         logger.debug("Authenticated user roles: {}", authentication.getAuthorities());
         return "Hello, Admin!";
 
