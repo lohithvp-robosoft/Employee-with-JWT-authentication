@@ -40,6 +40,18 @@ public class UserServiceImplementation implements UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Value("${mail.registration.subject}")
+    String registrationSubject;
+
+    @Value("${mail.registration.message}")
+    String registrationMessage;
+
+    @Value("${mail.login.subject}")
+    String loginSubject;
+
+    @Value("${mail.login.message}")
+    String loginMessage;
+
     @Override
     public ResponseEntity<UserResponseDTO<RegisterResponse>> registerUser(UserRequest userRequest) {
 
@@ -54,13 +66,11 @@ public class UserServiceImplementation implements UserService {
 
         logger.info(userCreatedMessage);
         userRepository.save(newUser);
-
-        mailUtil.sendRegistrationEmail(newUser);
-
+        mailUtil.sendEmail(newUser, registrationSubject, registrationMessage);
 
         RegisterResponse response = new RegisterResponse(newUser.getEmail(), newUser.getRole());
 
-        return new ResponseEntity<>(new UserResponseDTO<RegisterResponse>(0, 200, userCreatedMessage, response), HttpStatusCode.valueOf(200));
+        return new ResponseEntity<>(new UserResponseDTO<>(0, 200, userCreatedMessage, response), HttpStatusCode.valueOf(200));
     }
 
     @Override
@@ -86,6 +96,8 @@ public class UserServiceImplementation implements UserService {
         String jwtToken = jwtUtils.generateTokenFromUsername(userDetails);
         LoginResponse loginResponse = new LoginResponse(user.getEmail(), user.getRole(),jwtToken);
 
-        return new ResponseEntity<>(new UserResponseDTO<LoginResponse>(0, 200, userCreatedMessage, loginResponse), HttpStatusCode.valueOf(200));
+        mailUtil.sendEmail(user, loginSubject, loginMessage);
+
+        return new ResponseEntity<>(new UserResponseDTO<>(0, 200, userCreatedMessage, loginResponse), HttpStatusCode.valueOf(200));
     }
 }

@@ -9,10 +9,13 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.crypto.SecretKey;
 import java.security.Key;
 import java.util.Date;
+import java.util.Objects;
 
 @Component
 public class JwtUtils {
@@ -61,14 +64,21 @@ public class JwtUtils {
             Jwts.parser().verifyWith((SecretKey) key()).build().parseSignedClaims(authToken);
             return true;
         } catch (MalformedJwtException e) {
-            logger.error("Invalid JWT token: {}", e.getMessage());
+            handleJwtException(e, "Invalid JWT token ");
+
         } catch (ExpiredJwtException e) {
-            logger.error("JWT token is expired: {}", e.getMessage());
+            handleJwtException(e, "JWT token is expired: ");
         } catch (UnsupportedJwtException e) {
-            logger.error("JWT token is unsupported: {}", e.getMessage());
+
         } catch (IllegalArgumentException e) {
-            logger.error("JWT claims string is empty: {}", e.getMessage());
+            handleJwtException(e, "JWT claims string is empty: ");
         }
         return false;
+    }
+
+    public void handleJwtException(Exception e, String logMessage) {
+        logger.error("{}: {}", logMessage, e.getMessage());
+        HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
+        request.setAttribute("jwt-error", logMessage + ": " + e.getMessage());
     }
 }

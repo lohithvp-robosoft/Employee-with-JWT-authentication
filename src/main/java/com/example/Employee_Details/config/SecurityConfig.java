@@ -40,30 +40,31 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(authorizeRequests ->
-                authorizeRequests
-                        .requestMatchers("/api/v1/register").permitAll()
-                        .requestMatchers("/api/v1/login").permitAll()
-                        .requestMatchers("/swagger-ui.html").permitAll()
-                        .requestMatchers("/swagger-ui/index.html").permitAll()
-                        .requestMatchers("/api/admin").hasRole("ADMIN")
-                        .requestMatchers("/api/user").hasRole("USER")
-                        .requestMatchers("/api/v1/delete-employee").hasRole("ADMIN")
-                        .anyRequest().authenticated()
-        );
+            http.authorizeHttpRequests(authorizeRequests ->
+                    authorizeRequests
+                            .requestMatchers("/api/v1/register").permitAll()
+                            .requestMatchers("/api/v1/login").permitAll()
+                            .requestMatchers("/swagger-ui.html").permitAll()
+                            .requestMatchers("/swagger-ui/index.html").permitAll()
+                            .requestMatchers("/api/admin").hasRole("ADMIN")
+                            .requestMatchers("/api/user").hasRole("USER")
+                            .requestMatchers("/api/v1/delete-employee").hasRole("ADMIN")
+                            .requestMatchers("/error", "/error/**").permitAll()
+                            .anyRequest().authenticated()
+            );
 
-        http.sessionManagement(session ->
-                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        );
+            http.sessionManagement(session ->
+                    session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            );
 
         http.exceptionHandling(exception ->
                 exception.authenticationEntryPoint(unauthorizedHandler)
         );
 
-        http.csrf(AbstractHttpConfigurer::disable);
-        http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+            http.csrf(AbstractHttpConfigurer::disable);
+            http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
-        return http.build();
+            return http.build();
     }
 
     @Bean

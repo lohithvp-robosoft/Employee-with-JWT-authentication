@@ -19,7 +19,7 @@ public class MailUtil {
     @Value("${spring.mail.username}")
     private String fromEmail;
 
-    public void sendRegistrationEmail(User newUser) {
+    public void sendEmail(User newUser, String subject, String messageBody) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(fromEmail);

@@ -5,6 +5,7 @@ import com.example.Employee_Details.dto.RegisterResponse;
 import com.example.Employee_Details.dto.UserRequest;
 import com.example.Employee_Details.dto.UserResponseDTO;
 import com.example.Employee_Details.Services.UserService;
+import jakarta.validation.Valid;
 import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,12 +26,12 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/v1/register")
-    public ResponseEntity<UserResponseDTO<RegisterResponse>> registerUser(@RequestBody UserRequest userRequest) {
+    public ResponseEntity<UserResponseDTO<RegisterResponse>> registerUser(@Valid @RequestBody UserRequest userRequest) {
         return userService.registerUser(userRequest);
     }
 
     @PostMapping("/v1/login")
-    public ResponseEntity<UserResponseDTO<LoginResponse>> loginUser(@RequestBody UserRequest userRequest) {
+    public ResponseEntity<UserResponseDTO<LoginResponse>> loginUser(@Valid @RequestBody UserRequest userRequest) {
         return userService.loginUser(userRequest);
     }
 
