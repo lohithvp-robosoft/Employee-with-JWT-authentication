@@ -4,13 +4,22 @@ import com.example.Employee_Details.dto.EmployeeRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serial;
+import java.io.Serializable;
+
 //@Builder
 //@Data
 @Setter
 @Getter
 @Table
 @Entity
-public class Employee {
+public class Employee implements Serializable {
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
+
+    @Serial
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

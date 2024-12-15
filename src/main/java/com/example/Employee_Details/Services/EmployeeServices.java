@@ -4,13 +4,16 @@ import com.example.Employee_Details.dto.EmployeeRequestDTO;
 import com.example.Employee_Details.dto.EmployeeResponseDTO;
 import com.example.Employee_Details.exception.EmptyEmployeeListException;
 import com.example.Employee_Details.exception.NotFoundException;
+import com.example.Employee_Details.model.Employee;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public interface EmployeeServices {
 
-    ResponseEntity<EmployeeResponseDTO> getAllEmployeeDetail() throws EmptyEmployeeListException;
+    List<Employee> getAllEmployeeDetail() throws EmptyEmployeeListException;
 
     ResponseEntity<EmployeeResponseDTO> getEmployeeById(Long id) throws NotFoundException;
 

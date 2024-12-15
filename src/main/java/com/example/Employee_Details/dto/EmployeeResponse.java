@@ -5,11 +5,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 @Setter
 @Getter
 @AllArgsConstructor
-public class EmployeeResponse {
+public class EmployeeResponse implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     private ArrayList<Employee> employees = new ArrayList<>();
 }

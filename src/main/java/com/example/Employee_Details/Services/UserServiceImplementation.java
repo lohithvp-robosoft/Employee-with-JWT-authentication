@@ -66,7 +66,7 @@ public class UserServiceImplementation implements UserService {
 
         logger.info(userCreatedMessage);
         userRepository.save(newUser);
-        mailUtil.sendEmail(newUser, registrationSubject, registrationMessage);
+//        mailUtil.sendEmail(newUser, registrationSubject, registrationMessage);
 
         RegisterResponse response = new RegisterResponse(newUser.getEmail(), newUser.getRole());
 
@@ -96,7 +96,7 @@ public class UserServiceImplementation implements UserService {
         String jwtToken = jwtUtils.generateTokenFromUsername(userDetails);
         LoginResponse loginResponse = new LoginResponse(user.getEmail(), user.getRole(),jwtToken);
 
-        mailUtil.sendEmail(user, loginSubject, loginMessage);
+//        mailUtil.sendEmail(user, loginSubject, loginMessage);
 
         return new ResponseEntity<>(new UserResponseDTO<>(0, 200, userCreatedMessage, loginResponse), HttpStatusCode.valueOf(200));
     }

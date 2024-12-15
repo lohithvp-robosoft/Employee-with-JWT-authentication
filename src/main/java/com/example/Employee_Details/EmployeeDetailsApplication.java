@@ -1,12 +1,11 @@
 package com.example.Employee_Details;
 
-import com.example.Employee_Details.model.Employee;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.ArrayList;
+import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
+@EnableCaching
 public class EmployeeDetailsApplication {
 
     public static void main(String[] args) {

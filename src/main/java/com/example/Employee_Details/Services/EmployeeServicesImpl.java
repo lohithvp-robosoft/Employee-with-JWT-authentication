@@ -9,6 +9,10 @@ import com.example.Employee_Details.model.Employee;
 import com.example.Employee_Details.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -35,18 +39,21 @@ public class EmployeeServicesImpl implements EmployeeServices {
     @Value("${success.employee.deleted}")
     private String employeeDeletedMessage;
 
-    @Override
-    public ResponseEntity<EmployeeResponseDTO> getAllEmployeeDetail() throws EmptyEmployeeListException {
 
-        ArrayList<Employee> employeeList = new ArrayList<>(employeeRepository.findAll());
+    @Override
+    @Cacheable(value = "employees", key = "'allEmployees'")
+    public List<Employee> getAllEmployeeDetail() throws EmptyEmployeeListException {
+        List<Employee> employeeList = employeeRepository.findAll();
 
         if (employeeList.isEmpty()) {
-            throw new EmptyEmployeeListException(employeeListEmptyMessage);
+            throw new EmptyEmployeeListException("No employees found.");
         }
-        return ResponseUtil.successResponse(employeeList);
+
+        return employeeList;
     }
 
     @Override
+    @Cacheable(value = "employee", key = "#id")
     public ResponseEntity<EmployeeResponseDTO> getEmployeeById(Long id) throws NotFoundException {
         return employeeRepository.findById(id)
                 .map(employee -> {
@@ -58,6 +65,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
     }
 
     @Override
+    @CacheEvict(value = "employees", allEntries = true)
     public ResponseEntity<EmployeeResponseDTO> addEmployee(EmployeeRequestDTO employeeRequestDTO) {
         Employee newEmployee = new Employee(employeeRequestDTO);
         ArrayList<Employee> newEmployeeList = new ArrayList<>();
@@ -67,6 +75,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
     }
 
     @Override
+    @CacheEvict(value = "employees", allEntries = true)
     public ResponseEntity<EmployeeResponseDTO> updateEmployee(EmployeeRequestDTO updatedEmployee, Long id) throws NotFoundException {
         return employeeRepository.findById(id)
                 .map(employee -> {
@@ -83,6 +92,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
     }
 
     @Override
+    @CacheEvict(value = "employees", allEntries = true)
     public ResponseEntity<EmployeeResponseDTO> deleteEmployee(Long id) throws NotFoundException {
         Optional<Employee> employee = employeeRepository.findById(id);
         if (employee.isPresent()) {
@@ -107,5 +117,17 @@ public class EmployeeServicesImpl implements EmployeeServices {
         }
         return ResponseUtil.successResponse(employeeResponseDTOList);
     }
+
+    //    @Override
+//    @Cacheable(value = "employees", key = "'allEmployees'")
+//    public ResponseEntity<EmployeeResponseDTO> getAllEmployeeDetail() throws EmptyEmployeeListException {
+//
+//        ArrayList<Employee> employeeList = new ArrayList<>(employeeRepository.findAll());
+//
+//        if (employeeList.isEmpty()) {
+//            throw new EmptyEmployeeListException(employeeListEmptyMessage);
+//        }
+//        return ResponseUtil.successResponse(employeeList);
+//    }
 }
 
